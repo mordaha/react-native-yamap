@@ -50,7 +50,7 @@ RCT_CUSTOM_VIEW_PROPERTY(anchor, NSDictionary, YamapMarkerView) {
         CGFloat y = [[json valueForKey:@"y"] doubleValue];
         point = CGPointMake(x, y);
     } else {
-        point = CGPointMake(0.5, 0.5);
+        point = CGPointMake(0.5, 1.0);
     }
     [view setAnchor: [NSValue valueWithCGPoint:point]];
 }
