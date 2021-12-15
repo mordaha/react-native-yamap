@@ -154,6 +154,6 @@ public class YamapMarker extends ReactViewGroup implements MapObjectTapListener,
     public boolean onMapObjectTap(@NonNull MapObject mapObject, @NonNull Point point) {
         WritableMap e = Arguments.createMap();
         ((ReactContext) getContext()).getJSModule(RCTEventEmitter.class).receiveEvent(getId(), "onPress", e);
-        return false;
+        return true;
     }
 }
