@@ -528,7 +528,9 @@ NSInteger height = 100;
 
 // children
 -(void)addSubview:(UIView *)view {
-    mapView = view;
+    if([NSStringFromClass([view class]) isEqualToString:@"YRTGLView"]) {
+        mapView = view;
+    }
     [super addSubview:view];
 }
 
