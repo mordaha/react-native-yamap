@@ -19,6 +19,10 @@
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
+UIView * mapView;
+NSInteger width = 100;
+NSInteger height = 100;
+
 @implementation RNYMView {
     YMKMasstransitSession *masstransitSession;
     YMKMasstransitSession *walkSession;
@@ -511,8 +515,20 @@
     return [NSString stringWithFormat:@"#%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255)];
 }
 
+// map fix
+-(void)setMapSize:(NSInteger)mapWidth height:(NSInteger)mapHeight {
+    width = mapWidth;
+    height = mapHeight;
+    [self layoutSubviews];
+}
+
+- (void)layoutSubviews {
+    [testView setFrame:CGRectMake(0, 0, width, height)];
+}
+
 // children
 -(void)addSubview:(UIView *)view {
+    mapView = view;
     [super addSubview:view];
 }
 

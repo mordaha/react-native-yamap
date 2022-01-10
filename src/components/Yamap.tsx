@@ -101,6 +101,15 @@ export class YaMap extends React.Component<YaMapProps> {
     );
   }
 
+  // fix map
+  public setMapSize(width: number, height: number) {
+    UIManager.dispatchViewManagerCommand(
+      findNodeHandle(this),
+      this.getCommand('setMapSize'),
+      [width, height],
+    );
+  }
+
   public setTrafficVisible(isVisible: boolean) {
     UIManager.dispatchViewManagerCommand(
         findNodeHandle(this),

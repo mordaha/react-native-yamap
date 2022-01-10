@@ -17,6 +17,7 @@
 @property (nonatomic, copy) RCTBubblingEventBlock _Nullable onMapLongPress;
 
 // ref
+-(void) setMapSize:(NSInteger)mapWidth height:(NSInteger)mapHeight;
 -(void) emitCameraPositionToJS:(NSString*_Nonnull) _id;
 -(void) emitVisibleRegionToJS:(NSString*_Nonnull) _id;
 -(void) setCenter:(YMKCameraPosition*_Nonnull) position withDuration:(float) duration withAnimation:(int) animation;
