@@ -523,7 +523,7 @@ NSInteger height = 100;
 }
 
 - (void)layoutSubviews {
-    [testView setFrame:CGRectMake(0, 0, width, height)];
+    [mapView setFrame:CGRectMake(0, 0, width, height)];
 }
 
 // children
