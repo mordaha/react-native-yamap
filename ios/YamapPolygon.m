@@ -47,9 +47,10 @@ RCT_CUSTOM_VIEW_PROPERTY (points, NSArray<YMKPoint>, YamapPolygonView) {
 RCT_CUSTOM_VIEW_PROPERTY (innerRings, NSArray<NSArray<YMKPoint>>, YamapPolygonView) {
     NSMutableArray* innerRings = [[NSMutableArray alloc] init];
     if (json != nil) {
-        for (int i = 0; i < [json count]; ++i) {
-            [innerRings addObject:[RCTConvert Points:[json objectAtIndex:i]]];
-        }
+        // FIXMEAV
+//        for (int i = 0; i < [json count]; ++i) {
+//            [innerRings addObject:[RCTConvert Points:[json objectAtIndex:i]]];
+//        }
     }
     [view setInnerRings: innerRings];
 }
